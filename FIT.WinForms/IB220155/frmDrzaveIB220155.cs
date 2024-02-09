@@ -19,16 +19,15 @@ namespace FIT.WinForms.IB220155
     {
         DLWMSDbContext db = KonekcijaNaBazuIB220155.baza;
         private Timer timer;
-        List<DrzavaIB220155> listaDrzava=new List<DrzavaIB220155>();
+        List<DrzavaIB220155> listaDrzava = new List<DrzavaIB220155>();
         public frmDrzaveIB220155()
         {
             InitializeComponent();
             dgvDrzave.AutoGenerateColumns = false;
             timer = new Timer();
             timer.Interval = 1000;
-            timer.Tick+=(sender,e)=>lblTrenutnoVrijeme.Text=$"Trenutno vrijeme : {DateTime.Now.ToString("HH:mm:ss")}";
+            timer.Tick += (sender, e) => lblTrenutnoVrijeme.Text = $"Trenutno vrijeme : {DateTime.Now.ToString("HH:mm:ss")}";
             timer.Start();
-
 
         }
 
@@ -48,6 +47,24 @@ namespace FIT.WinForms.IB220155
             }
             ucitajDrzave();
 
+        }
+
+        private void btnNovaDrzava_Click(object sender, EventArgs e)
+        {
+            frmNovaDrzavaIB220155 frm = new frmNovaDrzavaIB220155();
+            frm.ShowDialog();
+            ucitajDrzave();
+        }
+
+        private void dgvDrzave_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex != 4)
+            {
+                var drzava = dgvDrzave.Rows[e.RowIndex].DataBoundItem as DrzavaIB220155;
+                var frm = new frmNovaDrzavaIB220155(drzava);
+                frm.ShowDialog();
+                ucitajDrzave();
+            }
         }
     }
 }

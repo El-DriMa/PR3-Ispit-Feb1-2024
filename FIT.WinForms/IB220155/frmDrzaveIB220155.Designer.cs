@@ -55,6 +55,8 @@
             dgvDrzave.RowTemplate.Height = 29;
             dgvDrzave.Size = new Size(763, 188);
             dgvDrzave.TabIndex = 0;
+            dgvDrzave.CellDoubleClick += dgvDrzave_CellDoubleClick;
+      
             // 
             // Zastava
             // 
@@ -113,6 +115,7 @@
             btnNovaDrzava.TabIndex = 1;
             btnNovaDrzava.Text = "Nova drzava";
             btnNovaDrzava.UseVisualStyleBackColor = true;
+            btnNovaDrzava.Click += btnNovaDrzava_Click;
             // 
             // btnPrintaj
             // 
@@ -142,6 +145,7 @@
             Controls.Add(btnNovaDrzava);
             Controls.Add(dgvDrzave);
             Name = "frmDrzaveIB220155";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Drzave";
             Load += frmDrzaveIB220155_Load;
             ((System.ComponentModel.ISupportInitialize)dgvDrzave).EndInit();
