@@ -14,6 +14,8 @@ namespace FIT.Data.IB220155
         public string Naziv { get; set; }
         public bool Status { get; set; }
         public byte[] Zastava { get; set; }
+        [NotMapped]
+        public int BrojGradova { get; set; }
 
        
     }

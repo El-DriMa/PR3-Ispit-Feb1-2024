@@ -30,34 +30,59 @@
         {
             lblKonekcijaInfo = new Label();
             btnIzvjestaj = new Button();
+            btnDrzaveGradovi = new Button();
+            btnPretraga = new Button();
             SuspendLayout();
             // 
             // lblKonekcijaInfo
             // 
             lblKonekcijaInfo.AutoSize = true;
             lblKonekcijaInfo.Font = new Font("Segoe UI", 15F);
-            lblKonekcijaInfo.Location = new Point(100, 72);
+            lblKonekcijaInfo.Location = new Point(114, 96);
             lblKonekcijaInfo.Name = "lblKonekcijaInfo";
-            lblKonekcijaInfo.Size = new Size(0, 28);
+            lblKonekcijaInfo.Size = new Size(0, 35);
             lblKonekcijaInfo.TabIndex = 0;
             // 
             // btnIzvjestaj
             // 
-            btnIzvjestaj.Location = new Point(138, 115);
+            btnIzvjestaj.Location = new Point(158, 153);
+            btnIzvjestaj.Margin = new Padding(3, 4, 3, 4);
             btnIzvjestaj.Name = "btnIzvjestaj";
-            btnIzvjestaj.Size = new Size(181, 23);
+            btnIzvjestaj.Size = new Size(207, 31);
             btnIzvjestaj.TabIndex = 1;
             btnIzvjestaj.Text = "Izvještaj";
             btnIzvjestaj.UseVisualStyleBackColor = true;
             btnIzvjestaj.Click += btnIzvjestaj_Click;
             // 
+            // btnDrzaveGradovi
+            // 
+            btnDrzaveGradovi.Location = new Point(33, 208);
+            btnDrzaveGradovi.Name = "btnDrzaveGradovi";
+            btnDrzaveGradovi.Size = new Size(208, 89);
+            btnDrzaveGradovi.TabIndex = 2;
+            btnDrzaveGradovi.Text = "Drzave i gradovi";
+            btnDrzaveGradovi.UseVisualStyleBackColor = true;
+            btnDrzaveGradovi.Click += btnDrzaveGradovi_Click;
+            // 
+            // btnPretraga
+            // 
+            btnPretraga.Location = new Point(263, 208);
+            btnPretraga.Name = "btnPretraga";
+            btnPretraga.Size = new Size(208, 89);
+            btnPretraga.TabIndex = 3;
+            btnPretraga.Text = "Pretraga";
+            btnPretraga.UseVisualStyleBackColor = true;
+            // 
             // frmPocetna
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(450, 184);
+            ClientSize = new Size(514, 376);
+            Controls.Add(btnPretraga);
+            Controls.Add(btnDrzaveGradovi);
             Controls.Add(btnIzvjestaj);
             Controls.Add(lblKonekcijaInfo);
+            Margin = new Padding(3, 4, 3, 4);
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "frmPocetna";
@@ -72,5 +97,7 @@
 
         private Label lblKonekcijaInfo;
         private Button btnIzvjestaj;
+        private Button btnDrzaveGradovi;
+        private Button btnPretraga;
     }
 }

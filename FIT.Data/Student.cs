@@ -14,7 +14,7 @@ namespace FIT.Data
         public byte[] Slika { get; set; }
         public DateTime DatumRodjenja { get; set; }
         public bool Aktivan { get; set; }        
-        public int SemestarId { get; set; }
+        public SemestarIB220155 Semestar { get; set; }
         public GradIB220155 Grad { get; set; }
         public override string ToString()
         {
