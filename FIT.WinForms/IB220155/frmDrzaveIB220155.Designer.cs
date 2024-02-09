@@ -55,8 +55,8 @@
             dgvDrzave.RowTemplate.Height = 29;
             dgvDrzave.Size = new Size(763, 188);
             dgvDrzave.TabIndex = 0;
+            dgvDrzave.CellContentClick += dgvDrzave_CellContentClick;
             dgvDrzave.CellDoubleClick += dgvDrzave_CellDoubleClick;
-      
             // 
             // Zastava
             // 

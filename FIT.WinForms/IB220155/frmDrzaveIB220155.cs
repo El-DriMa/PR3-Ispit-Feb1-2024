@@ -66,5 +66,15 @@ namespace FIT.WinForms.IB220155
                 ucitajDrzave();
             }
         }
+
+        private void dgvDrzave_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 4)
+            {
+                var drzava = dgvDrzave.Rows[e.RowIndex].DataBoundItem as DrzavaIB220155;
+                var frm = new frmGradoviIB220155(drzava);
+                frm.ShowDialog();
+            }
+        }
     }
 }
