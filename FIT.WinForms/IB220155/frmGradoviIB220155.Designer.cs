@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             pbZastava = new PictureBox();
             lblNazivDrzave = new Label();
             label2 = new Label();
@@ -43,9 +44,11 @@
             chkAktivnostGrada = new CheckBox();
             txtBrGradova = new TextBox();
             label3 = new Label();
+            err = new ErrorProvider(components);
             ((System.ComponentModel.ISupportInitialize)pbZastava).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvGradovi).BeginInit();
             groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)err).BeginInit();
             SuspendLayout();
             // 
             // pbZastava
@@ -136,6 +139,7 @@
             btnDodajGrad.TabIndex = 5;
             btnDodajGrad.Text = "Dodaj";
             btnDodajGrad.UseVisualStyleBackColor = true;
+            btnDodajGrad.Click += btnDodajGrad_Click;
             // 
             // groupBox1
             // 
@@ -194,6 +198,10 @@
             label3.TabIndex = 0;
             label3.Text = "Broj gradova :";
             // 
+            // err
+            // 
+            err.ContainerControl = this;
+            // 
             // frmGradoviIB220155
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -214,6 +222,7 @@
             ((System.ComponentModel.ISupportInitialize)dgvGradovi).EndInit();
             groupBox1.ResumeLayout(false);
             groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)err).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -235,5 +244,6 @@
         private DataGridViewTextBoxColumn NazivGrada;
         private DataGridViewCheckBoxColumn Aktivan;
         private DataGridViewButtonColumn PromijeniStatus;
+        private ErrorProvider err;
     }
 }

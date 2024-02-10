@@ -1,4 +1,5 @@
-﻿using FIT.Data.IB220155;
+﻿using FIT.Data;
+using FIT.Data.IB220155;
 using FIT.Infrastructure;
 using System;
 using System.Collections.Generic;
@@ -38,7 +39,7 @@ namespace FIT.WinForms.IB220155
 
         private void dgvGradovi_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            //MessageBox.Show($"br:{e.ColumnIndex}");//2
+            
             if (e.ColumnIndex == 2)
             {
                 var grad = dgvGradovi.Rows[e.RowIndex].DataBoundItem as GradIB220155;
@@ -48,6 +49,40 @@ namespace FIT.WinForms.IB220155
                 ucitajGradove();
             }
 
+        }
+
+        private void btnDodajGrad_Click(object sender, EventArgs e)
+        {
+            var nazivGrada = txtNazivGrada.Text;
+            if (Validiraj())
+            {
+                var grad = new GradIB220155()
+                {
+                    Naziv = nazivGrada,
+                    Drzava = drzava,
+                    Status = true,
+                };
+                db.GradoviIB220155.Add(grad);
+                db.SaveChanges();
+                ucitajGradove();
+            }
+
+        }
+        
+        private bool Validiraj()
+        {
+            var nazivGrada = txtNazivGrada.Text;
+            if (!Helpers.Validator.ProvjeriUnos(txtNazivGrada, err, Kljucevi.ReqiredValue))
+                return false;
+
+            var postojeciGradovi = db.GradoviIB220155.FirstOrDefault(x => x.Naziv == nazivGrada && x.Drzava == drzava);
+            if (postojeciGradovi != null)
+            {
+                MessageBox.Show("U bazi vec postoji taj grad !!!");
+                return false;
+            }
+
+            return true;
         }
     }
 }
