@@ -27,6 +27,11 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="IB220155\dsGradoviIB220155.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>dsGradoviIB220155.xsd</DependentUpon>
+    </Compile>
     <Compile Update="Properties\Resources.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -54,8 +59,9 @@
     <None Update="DLWMS.db">
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
     </None>
-    <None Update="IB220155\rptUvjerenjeIB220155.rdlc">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    <None Update="IB220155\dsGradoviIB220155.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsGradoviIB220155.Designer.cs</LastGenOutput>
     </None>
   </ItemGroup>
 
