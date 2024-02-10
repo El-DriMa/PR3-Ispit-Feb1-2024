@@ -17,6 +17,9 @@ namespace FIT.Data.IB220155
         [NotMapped]
         public int BrojGradova { get; set; }
 
-       
+        public override string ToString()
+        {
+            return Naziv;
+        }
     }
 }

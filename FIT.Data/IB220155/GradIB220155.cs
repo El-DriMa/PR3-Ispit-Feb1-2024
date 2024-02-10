@@ -15,5 +15,9 @@ namespace FIT.Data.IB220155
         public bool Status { get; set; }
         public DrzavaIB220155 Drzava { get; set; }
 
+        public override string ToString()
+        {
+            return Naziv;
+        }
     }
 }

@@ -1,6 +1,6 @@
-﻿namespace FIT.WinForms.Izvjestaji
+﻿namespace FIT.WinForms.IB220155
 {
-    partial class frmIzvjestajiIB
+    partial class frmIzvjestajIB220155
     {
         /// <summary>
         /// Required designer variable.
@@ -33,24 +33,25 @@
             // 
             // reportViewer1
             // 
-            reportViewer1.Dock = DockStyle.Fill;
+            reportViewer1.Dock = DockStyle.Top;
             reportViewer1.LocalReport.ReportEmbeddedResource = "FIT.WinForms.Izvjestaji.rptUvjerenje.rdlc";
+            reportViewer1.LocalReport.ReportPath = "";
             reportViewer1.Location = new Point(0, 0);
             reportViewer1.Name = "ReportViewer";
             reportViewer1.ServerReport.BearerToken = null;
-            reportViewer1.Size = new Size(800, 450);
+            reportViewer1.Size = new Size(870, 450);
             reportViewer1.TabIndex = 0;
             // 
-            // frmIzvjestaji
+            // frmIzvjestajIB220155
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(870, 450);
             Controls.Add(reportViewer1);
-            Name = "frmIzvjestaji";
+            Name = "frmIzvjestajIB220155";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "frmIzvjestaji";
-            Load += frmIzvjestaji_Load;
+            Text = "frmIzvjestajIB220155";
+            Load += frmIzvjestajIB220155_Load;
             ResumeLayout(false);
         }
 

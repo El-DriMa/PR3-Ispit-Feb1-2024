@@ -1,9 +1,9 @@
 ﻿namespace FIT.WinForms.Izvjestaji
 {
-    public partial class frmIzvjestaji : Form
+    public partial class frmIzvjestajiIB : Form
     {
 
-        public frmIzvjestaji()
+        public frmIzvjestajiIB()
         {
             InitializeComponent();
         }

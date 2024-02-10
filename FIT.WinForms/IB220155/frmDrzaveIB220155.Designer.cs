@@ -125,6 +125,7 @@
             btnPrintaj.TabIndex = 2;
             btnPrintaj.Text = "Printaj";
             btnPrintaj.UseVisualStyleBackColor = true;
+            btnPrintaj.Click += btnPrintaj_Click;
             // 
             // lblTrenutnoVrijeme
             // 

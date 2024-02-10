@@ -76,5 +76,12 @@ namespace FIT.WinForms.IB220155
                 frm.ShowDialog();
             }
         }
+
+        private void btnPrintaj_Click(object sender, EventArgs e)
+        {
+            var odabranaDrzava = dgvDrzave.SelectedRows[0].DataBoundItem as DrzavaIB220155;
+            var frm = new frmIzvjestajIB220155(odabranaDrzava);
+            frm.ShowDialog();
+        }
     }
 }
