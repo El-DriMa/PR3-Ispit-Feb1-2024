@@ -29,12 +29,18 @@ namespace FIT.WinForms
 
         private void btnIzvjestaj_Click(object sender, EventArgs e)
         {
-           // new frmIzvjestaji().Show();
+            // new frmIzvjestaji().Show();
         }
 
         private void btnDrzaveGradovi_Click(object sender, EventArgs e)
         {
             frmDrzaveIB220155 frm = new frmDrzaveIB220155();
+            frm.ShowDialog();
+        }
+
+        private void btnPretraga_Click(object sender, EventArgs e)
+        {
+            var frm = new frmPretragaIB220155();
             frm.ShowDialog();
         }
     }

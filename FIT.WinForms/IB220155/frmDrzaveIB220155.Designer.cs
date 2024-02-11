@@ -53,6 +53,7 @@
             dgvDrzave.ReadOnly = true;
             dgvDrzave.RowHeadersWidth = 51;
             dgvDrzave.RowTemplate.Height = 29;
+            dgvDrzave.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvDrzave.Size = new Size(763, 188);
             dgvDrzave.TabIndex = 0;
             dgvDrzave.CellContentClick += dgvDrzave_CellContentClick;

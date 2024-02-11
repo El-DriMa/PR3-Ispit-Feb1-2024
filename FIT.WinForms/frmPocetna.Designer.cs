@@ -72,6 +72,7 @@
             btnPretraga.TabIndex = 3;
             btnPretraga.Text = "Pretraga";
             btnPretraga.UseVisualStyleBackColor = true;
+            btnPretraga.Click += btnPretraga_Click;
             // 
             // frmPocetna
             // 
