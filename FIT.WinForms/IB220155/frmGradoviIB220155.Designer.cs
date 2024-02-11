@@ -171,6 +171,7 @@
             btnGenerisi.TabIndex = 7;
             btnGenerisi.Text = "Generisi";
             btnGenerisi.UseVisualStyleBackColor = true;
+            btnGenerisi.Click += btnGenerisi_Click;
             // 
             // chkAktivnostGrada
             // 

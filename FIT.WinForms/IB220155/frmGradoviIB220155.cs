@@ -39,7 +39,7 @@ namespace FIT.WinForms.IB220155
 
         private void dgvGradovi_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+
             if (e.ColumnIndex == 2)
             {
                 var grad = dgvGradovi.Rows[e.RowIndex].DataBoundItem as GradIB220155;
@@ -68,7 +68,7 @@ namespace FIT.WinForms.IB220155
             }
 
         }
-        
+
         private bool Validiraj()
         {
             var nazivGrada = txtNazivGrada.Text;
@@ -83,6 +83,50 @@ namespace FIT.WinForms.IB220155
             }
 
             return true;
+        }
+
+        private async void btnGenerisi_Click(object sender, EventArgs e)
+        {
+            int brojGradova;
+
+            try
+            {
+                brojGradova = int.Parse(txtBrGradova.Text);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Niste unijeli broj !!");
+                return;
+            }
+
+            txtIspis.ScrollBars = ScrollBars.Vertical;
+
+            var aktivnost = chkAktivnostGrada.Checked;
+
+            await Task.Run(()=>dodajGradove(brojGradova,aktivnost));
+        }
+
+        private void dodajGradove(int brojGradova,bool aktivnost)
+        {
+           for(int i = 0; i < brojGradova; i++)
+            {
+                var grad = new GradIB220155()
+                {
+                    Naziv=$"Grad {i+1}",
+                    Drzava=drzava,
+                    Status=aktivnost,
+                };
+                db.GradoviIB220155.Add(grad);
+
+                BeginInvoke(new Action(() =>
+                {
+                    txtIspis.Text += $"Dodat je grad {grad.Naziv} za drzavu {drzava.Naziv}" + Environment.NewLine;
+                }));
+
+                Thread.Sleep(300);
+            }
+            db.SaveChanges();
+            BeginInvoke(ucitajGradove);
         }
     }
 }
