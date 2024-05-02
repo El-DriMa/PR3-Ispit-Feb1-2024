@@ -8,7 +8,7 @@ The exam tasks include:
 - Database Modifications:
 - Creation of tables to store country and city data.
 - Modification of the existing table to include a new column for linking with the new table.
-- 
+  
 ## Forms Creation:
 - Creation of forms for managing country and city data.
 - Form for adding new countries and modifying existing ones.
